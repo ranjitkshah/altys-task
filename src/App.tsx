@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { FunctionCard } from './components/FunctionCard';
-import { ConnectorLine } from './components/ConnectorLine';
+// import { ConnectorLine } from './components/ConnectorLine';
 import { evaluateEquation } from './utils/evaluate';
 import {  isValidNumberInput } from './utils/validation';
 
@@ -61,25 +61,25 @@ export default function App() {
     return current;
   }, [initialX, functionsState]);
 
-  const getFunctionPos = (id: number) => {
-    const {left,top} = FUNCTION_POSITIONS[id];
-    console.log('getFunctionPos', id, left, top);
-    return elementCenter(left, top, 57, 391);
-  };
+  // const getFunctionPos = (id: number) => {
+  //   const {left,top} = FUNCTION_POSITIONS[id];
+  //   console.log('getFunctionPos', id, left, top);
+  //   return elementCenter(left, top, 57, 391);
+  // };
 
-  const getInitialPos = () => {
-    const left = 111;
-    const top = 221;
-    return { x: left + 30, y: top + 50 };
-  };
+  // const getInitialPos = () => {
+  //   const left = 111;
+  //   const top = 221;
+  //   return { x: left + 30, y: top + 50 };
+  // };
 
-  const getFinalPos = () => {
-    const left = 1245;
-    const top = 252;
-    const width = 80;
-    const height = 40;
-    return { x: left + width/2, y: top + height/2 };
-  };
+  // const getFinalPos = () => {
+  //   const left = 1245;
+  //   const top = 252;
+  //   const width = 80;
+  //   const height = 40;
+  //   return { x: left + width/2, y: top + height/2 };
+  // };
 
   return (
     <div>
@@ -274,11 +274,11 @@ export default function App() {
   );
 }
 
-function elementCenter(leftPx: string, topPx: string, width = 280, height = 150) {
-  const left = parseFloat(leftPx);
-  const top = parseFloat(topPx);
-  return {
-    x: left + width/2,
-    y: top + height/2
-  };
-}
+// function elementCenter(leftPx: string, topPx: string, width = 280, height = 150) {
+//   const left = parseFloat(leftPx);
+//   const top = parseFloat(topPx);
+//   return {
+//     x: left + width/2,
+//     y: top + height/2
+//   };
+// }
