@@ -13,11 +13,11 @@ type FuncConfig = {
 
 // The chain order: 1 → 2 → 4 → 5 → 3
 const FUNCTION_POSITIONS: Record<number, {left:string,top:string}> = {
-  1: { left: '20%', top: '80px' },
-  2: { left: '42%', top: '80px' },
-  3: { left: '65%', top: '80px' },
-  4: { left: '35%', top: '400px' },
-  5: { left: '55%', top: '400px' }
+  1: { left: '300px', top: '80px' },
+  2: { left: '600px', top: '80px' },
+  3: { left: '900px', top: '80px' },
+  4: { left: '350px', top: '400px' },
+  5: { left: '750px', top: '400px' }
 };
 
 const INITIAL_FUNCTIONS: FuncConfig[] = [
@@ -63,18 +63,19 @@ export default function App() {
 
   const getFunctionPos = (id: number) => {
     const {left,top} = FUNCTION_POSITIONS[id];
-    return elementCenter(left, top, 180, 150);
+    console.log('getFunctionPos', id, left, top);
+    return elementCenter(left, top, 57, 391);
   };
 
   const getInitialPos = () => {
-    const left = 50;
-    const top = 100;
+    const left = 111;
+    const top = 221;
     return { x: left + 30, y: top + 50 };
   };
 
   const getFinalPos = () => {
-    const left = 700;
-    const top = 300;
+    const left = 1245;
+    const top = 252;
     const width = 80;
     const height = 40;
     return { x: left + width/2, y: top + height/2 };
@@ -263,17 +264,17 @@ export default function App() {
 
 
       {/* Connector Lines */}
-      <ConnectorLine from={getInitialPos()} to={getFunctionPos(1)} />
+      {/* <ConnectorLine from={getInitialPos()} to={getFunctionPos(1)} />
       <ConnectorLine from={getFunctionPos(1)} to={getFunctionPos(2)} />
       <ConnectorLine from={getFunctionPos(2)} to={getFunctionPos(4)} />
       <ConnectorLine from={getFunctionPos(4)} to={getFunctionPos(5)} />
       <ConnectorLine from={getFunctionPos(5)} to={getFunctionPos(3)} />
-      <ConnectorLine from={getFunctionPos(3)} to={getFinalPos()} />
+      <ConnectorLine from={getFunctionPos(3)} to={getFinalPos()} /> */}
     </div>
   );
 }
 
-function elementCenter(leftPx: string, topPx: string, width = 180, height = 150) {
+function elementCenter(leftPx: string, topPx: string, width = 280, height = 150) {
   const left = parseFloat(leftPx);
   const top = parseFloat(topPx);
   return {
